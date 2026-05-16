@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/logo.png";
-import hero from "@/assets/hero.jpg";
+
 import { Star, Scissors, MapPin, Instagram, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/")({
