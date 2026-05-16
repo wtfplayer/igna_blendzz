@@ -37,13 +37,13 @@ function Index() {
       {/* Nav */}
       <header className="absolute top-0 left-0 right-0 z-20 px-6 md:px-12 py-6 flex items-center justify-between">
         <img src={logo} alt="Igna Blendzz" className="h-14 w-14 rounded-full object-cover" />
-        <nav className="hidden md:flex gap-10 text-sm uppercase tracking-[0.2em] text-ink">
+        <nav className="hidden md:flex gap-10 text-sm uppercase tracking-[0.2em] text-cream">
           <a href="#services" className="hover:text-gold transition">Services</a>
           <a href="#reviews" className="hover:text-gold transition">Reviews</a>
           <a href="#visit" className="hover:text-gold transition">Visit</a>
         </nav>
         <a href={BOOK_URL} target="_blank" rel="noopener noreferrer"
-           className="text-xs uppercase tracking-[0.2em] border border-ink px-5 py-3 hover:bg-ink hover:text-cream transition">
+           className="text-xs uppercase tracking-[0.2em] border border-cream/40 text-cream px-5 py-3 hover:bg-gold hover:text-ink hover:border-gold transition">
           Book
         </a>
       </header>
