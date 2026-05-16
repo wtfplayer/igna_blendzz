@@ -17,15 +17,6 @@ export const Route = createFileRoute("/")({
 
 const BOOK_URL = "https://app.thecut.co/barbers/ignacio-amaya-ia5q2w7";
 
-const reviews = [
-  { name: "Marcus T.", text: "Yo Igna got the cleanest taper in the DMV. Lineup was sharp, fade was crispy. New regular fr.", date: "2 weeks ago" },
-  { name: "Devon R.", text: "Young bull got real talent. Took his time, made sure everything was perfect. 10/10.", date: "1 month ago" },
-  { name: "Jamal K.", text: "Best cut I've had in a minute. Vibe in the chair was chill, conversation was real. Salute.", date: "3 weeks ago" },
-  { name: "Andre P.", text: "Walked in tapped out, walked out a new man. Igna got hands. Booking again next week.", date: "5 days ago" },
-  { name: "Quan W.", text: "Mid taper fade with the curly top — he ate that up. Worth every dollar.", date: "2 months ago" },
-  { name: "Tre S.", text: "On time, on point, on God. Igna the truth. DMV got a problem on his hands.", date: "1 week ago" },
-];
-
 const services = [
   { name: "Male Haircut", price: "$30", desc: "Full cut with fade, taper, and clean lineup. 1 hour in the chair." },
   { name: "Lineup", price: "$5", desc: "Quick edge-up to keep you sharp in between cuts. 15 minutes." },
@@ -39,8 +30,7 @@ function Index() {
         <img src={logo} alt="Igna Blendzz" className="h-14 w-14 rounded-full object-cover" />
         <nav className="hidden md:flex gap-10 text-sm uppercase tracking-[0.2em] text-cream">
           <a href="#services" className="hover:text-gold transition">Services</a>
-          <a href="#reviews" className="hover:text-gold transition">Reviews</a>
-          <a href="#visit" className="hover:text-gold transition">Visit</a>
+          <a href="#visit" className="hover:text-gold transition">Book</a>
         </nav>
         <a href={BOOK_URL} target="_blank" rel="noopener noreferrer"
            className="text-xs uppercase tracking-[0.2em] border border-cream/40 text-cream px-5 py-3 hover:bg-gold hover:text-ink hover:border-gold transition">
@@ -110,63 +100,62 @@ function Index() {
         </div>
       </section>
 
-      {/* Reviews */}
-      <section id="reviews" className="bg-ink text-cream px-6 md:px-12 py-24 md:py-32">
+      {/* Booking */}
+      <section id="visit" className="bg-ink text-cream px-6 md:px-12 py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
-          <p className="text-gold uppercase tracking-[0.3em] text-xs mb-3">Word on the Block</p>
-          <h2 className="text-4xl md:text-6xl font-display mb-16">What the chair says.</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reviews.map((r) => (
-              <figure key={r.name} className="border border-cream/15 p-8 hover:border-gold transition">
-                <div className="flex gap-0.5 mb-5">
-                  {Array.from({length:5}).map((_,i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
-                </div>
-                <blockquote className="text-cream/90 leading-relaxed mb-6 font-display text-xl italic">
-                  "{r.text}"
-                </blockquote>
-                <figcaption className="text-xs uppercase tracking-[0.2em] text-cream/60">
-                  {r.name} · {r.date}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Booking CTA */}
-      <section id="visit" className="px-6 md:px-12 py-24 md:py-32 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-gold-deep uppercase tracking-[0.3em] text-xs mb-3">Pull Up</p>
-            <h2 className="text-4xl md:text-6xl font-display mb-6">Book your chair.</h2>
-            <p className="text-foreground/70 text-lg mb-8 max-w-md">
-              All bookings handled through TheCut. Pick your slot, lock it in, and show up fresh-faced ready for a fresh face.
+          <div className="text-center mb-12">
+            <p className="text-gold uppercase tracking-[0.3em] text-xs mb-3">Pull Up</p>
+            <h2 className="text-4xl md:text-6xl font-display mb-4">Book your chair.</h2>
+            <p className="text-cream/70 max-w-xl mx-auto">
+              Pick your slot below — bookings powered by TheCut. If it doesn't load, use the direct link.
             </p>
+          </div>
+
+          <div className="relative bg-cream rounded-sm overflow-hidden border border-gold/20">
+            <iframe
+              src={BOOK_URL}
+              title="Book with Igna Blendzz on TheCut"
+              className="w-full h-[720px] border-0"
+              loading="lazy"
+              allow="payment"
+            />
+          </div>
+
+          <div className="mt-8 text-center">
             <a href={BOOK_URL} target="_blank" rel="noopener noreferrer"
-               className="inline-block bg-ink text-cream px-10 py-5 text-sm uppercase tracking-[0.25em] hover:bg-gold hover:text-ink transition">
-              Book on TheCut →
+               className="inline-block bg-gold text-ink px-10 py-5 text-sm uppercase tracking-[0.25em] hover:bg-cream transition">
+              Open TheCut in a new tab →
             </a>
           </div>
-          <div className="border border-ink/20 p-8 md:p-10 space-y-6">
-            <div className="flex items-start gap-4">
-              <MapPin className="h-5 w-5 text-gold-deep mt-1 shrink-0" />
+
+          <div className="mt-16 grid md:grid-cols-3 gap-6">
+            <div className="border border-cream/15 p-6 flex items-start gap-4">
+              <MapPin className="h-5 w-5 text-gold mt-1 shrink-0" />
               <div>
-                <p className="uppercase tracking-[0.2em] text-xs text-foreground/60 mb-1">Area</p>
-                <p className="font-display text-xl">Hazelcrest · Gaithersburg, MD 20877</p>
+                <p className="uppercase tracking-[0.2em] text-xs text-cream/60 mb-1">Area</p>
+                <p className="font-display text-lg">Hazelcrest · Gaithersburg, MD 20877</p>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <Clock className="h-5 w-5 text-gold-deep mt-1 shrink-0" />
+            <div className="border border-cream/15 p-6 flex items-start gap-4">
+              <Clock className="h-5 w-5 text-gold mt-1 shrink-0" />
               <div>
-                <p className="uppercase tracking-[0.2em] text-xs text-foreground/60 mb-1">Hours</p>
-                <p className="font-display text-xl">Tue – Sun · By appointment</p>
+                <p className="uppercase tracking-[0.2em] text-xs text-cream/60 mb-1">Hours</p>
+                <p className="font-display text-lg">Tue – Sun · By appointment</p>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <Instagram className="h-5 w-5 text-gold-deep mt-1 shrink-0" />
+            <div className="border border-cream/15 p-6 flex items-start gap-4">
+              <Instagram className="h-5 w-5 text-gold mt-1 shrink-0" />
               <div>
-                <p className="uppercase tracking-[0.2em] text-xs text-foreground/60 mb-1">Socials</p>
-                <p className="font-display text-xl">@igna_blendzz</p>
+                <p className="uppercase tracking-[0.2em] text-xs text-cream/60 mb-1">Socials</p>
+                <p className="font-display text-base space-x-2">
+                  <a href="https://www.instagram.com/igna_blendzz/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition underline-offset-4 hover:underline">
+                    IG @igna_blendzz
+                  </a>
+                  <span className="text-cream/30">·</span>
+                  <a href="https://www.tiktok.com/@igna_blendzz" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition underline-offset-4 hover:underline">
+                    TikTok @igna_blendzz
+                  </a>
+                </p>
               </div>
             </div>
           </div>
