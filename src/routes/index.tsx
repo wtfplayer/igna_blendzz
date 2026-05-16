@@ -27,10 +27,8 @@ const reviews = [
 ];
 
 const services = [
-  { name: "Taper Fade", price: "$35", desc: "Clean low/mid/high taper with precision lineup." },
-  { name: "Full Cut + Beard", price: "$45", desc: "Haircut, lineup, beard sculpt and hot towel finish." },
-  { name: "Lineup Only", price: "$20", desc: "Sharp edge-up for in-between weeks." },
-  { name: "Kids Cut (under 12)", price: "$25", desc: "Patient, clean cuts for the young kings." },
+  { name: "Male Haircut", price: "$30", desc: "Full cut with fade, taper, and clean lineup. 1 hour in the chair." },
+  { name: "Lineup", price: "$5", desc: "Quick edge-up to keep you sharp in between cuts. 15 minutes." },
 ];
 
 function Index() {
