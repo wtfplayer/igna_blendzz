@@ -27,10 +27,8 @@ const reviews = [
 ];
 
 const services = [
-  { name: "Taper Fade", price: "$35", desc: "Clean low/mid/high taper with precision lineup." },
-  { name: "Full Cut + Beard", price: "$45", desc: "Haircut, lineup, beard sculpt and hot towel finish." },
-  { name: "Lineup Only", price: "$20", desc: "Sharp edge-up for in-between weeks." },
-  { name: "Kids Cut (under 12)", price: "$25", desc: "Patient, clean cuts for the young kings." },
+  { name: "Male Haircut", price: "$30", desc: "Full cut with fade, taper, and clean lineup. 1 hour in the chair." },
+  { name: "Lineup", price: "$5", desc: "Quick edge-up to keep you sharp in between cuts. 15 minutes." },
 ];
 
 function Index() {
@@ -143,7 +141,7 @@ function Index() {
               <MapPin className="h-5 w-5 text-gold-deep mt-1 shrink-0" />
               <div>
                 <p className="uppercase tracking-[0.2em] text-xs text-foreground/60 mb-1">Area</p>
-                <p className="font-display text-xl">DMV · DC / Maryland / Virginia</p>
+                <p className="font-display text-xl">Hazelcrest · Gaithersburg, MD 20877</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
