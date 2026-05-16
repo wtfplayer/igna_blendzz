@@ -141,7 +141,7 @@ function Index() {
               <MapPin className="h-5 w-5 text-gold-deep mt-1 shrink-0" />
               <div>
                 <p className="uppercase tracking-[0.2em] text-xs text-foreground/60 mb-1">Area</p>
-                <p className="font-display text-xl">DMV · DC / Maryland / Virginia</p>
+                <p className="font-display text-xl">Hazelcrest · Gaithersburg, MD 20877</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
