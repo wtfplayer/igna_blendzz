@@ -17,15 +17,6 @@ export const Route = createFileRoute("/")({
 
 const BOOK_URL = "https://app.thecut.co/barbers/ignacio-amaya-ia5q2w7";
 
-const reviews = [
-  { name: "Marcus T.", text: "Yo Igna got the cleanest taper in the DMV. Lineup was sharp, fade was crispy. New regular fr.", date: "2 weeks ago" },
-  { name: "Devon R.", text: "Young bull got real talent. Took his time, made sure everything was perfect. 10/10.", date: "1 month ago" },
-  { name: "Jamal K.", text: "Best cut I've had in a minute. Vibe in the chair was chill, conversation was real. Salute.", date: "3 weeks ago" },
-  { name: "Andre P.", text: "Walked in tapped out, walked out a new man. Igna got hands. Booking again next week.", date: "5 days ago" },
-  { name: "Quan W.", text: "Mid taper fade with the curly top — he ate that up. Worth every dollar.", date: "2 months ago" },
-  { name: "Tre S.", text: "On time, on point, on God. Igna the truth. DMV got a problem on his hands.", date: "1 week ago" },
-];
-
 const services = [
   { name: "Male Haircut", price: "$30", desc: "Full cut with fade, taper, and clean lineup. 1 hour in the chair." },
   { name: "Lineup", price: "$5", desc: "Quick edge-up to keep you sharp in between cuts. 15 minutes." },
