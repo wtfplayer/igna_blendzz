@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/logo.png";
-import hero from "@/assets/hero.jpg";
+
 import { Star, Scissors, MapPin, Instagram, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -37,41 +37,52 @@ function Index() {
       {/* Nav */}
       <header className="absolute top-0 left-0 right-0 z-20 px-6 md:px-12 py-6 flex items-center justify-between">
         <img src={logo} alt="Igna Blendzz" className="h-14 w-14 rounded-full object-cover" />
-        <nav className="hidden md:flex gap-10 text-sm uppercase tracking-[0.2em] text-ink">
+        <nav className="hidden md:flex gap-10 text-sm uppercase tracking-[0.2em] text-cream">
           <a href="#services" className="hover:text-gold transition">Services</a>
           <a href="#reviews" className="hover:text-gold transition">Reviews</a>
           <a href="#visit" className="hover:text-gold transition">Visit</a>
         </nav>
         <a href={BOOK_URL} target="_blank" rel="noopener noreferrer"
-           className="text-xs uppercase tracking-[0.2em] border border-ink px-5 py-3 hover:bg-ink hover:text-cream transition">
+           className="text-xs uppercase tracking-[0.2em] border border-cream/40 text-cream px-5 py-3 hover:bg-gold hover:text-ink hover:border-gold transition">
           Book
         </a>
       </header>
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-end overflow-hidden">
-        <img src={hero} alt="Igna Blendzz barber at work" width={1600} height={1100}
-             className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30" />
-        <div className="relative z-10 px-6 md:px-12 pb-20 md:pb-32 max-w-5xl">
-          <p className="text-gold uppercase tracking-[0.4em] text-xs mb-6">DMV · Est. 2024</p>
-          <h1 className="text-5xl md:text-8xl font-display text-cream leading-[0.95]">
-            Sharp cuts.<br/>
-            <span className="italic text-gold">Sharper</span> standards.
-          </h1>
-          <p className="mt-8 max-w-xl text-cream/80 text-lg">
-            Igna Blendzz is a young DMV barber building a name on clean fades, surgical lineups, and chairs that feel like home.
-          </p>
-          <div className="mt-10 flex gap-4 items-center">
-            <a href={BOOK_URL} target="_blank" rel="noopener noreferrer"
-               className="bg-gold text-ink px-8 py-4 text-sm uppercase tracking-[0.2em] hover:bg-cream transition">
-              Book a Cut
-            </a>
-            <div className="flex items-center gap-2 text-cream/80 text-sm">
-              <div className="flex gap-0.5">
-                {Array.from({length:5}).map((_,i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
+      <section className="relative min-h-screen flex items-center bg-ink text-cream overflow-hidden">
+        {/* decorative gold accents */}
+        <div className="absolute -top-40 -right-40 w-[40rem] h-[40rem] rounded-full bg-gold/10 blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] rounded-full bg-gold-deep/15 blur-3xl" />
+        <div className="absolute inset-0 opacity-[0.04]"
+             style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent 0 18px, currentColor 18px 19px)" }} />
+
+        <div className="relative z-10 px-6 md:px-12 max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-12 items-center w-full pt-32 pb-20">
+          <div>
+            <p className="text-gold uppercase tracking-[0.4em] text-xs mb-6">DMV · Est. 2024</p>
+            <h1 className="text-5xl md:text-8xl font-display leading-[0.95]">
+              Sharp cuts.<br/>
+              <span className="italic text-gold">Sharper</span> standards.
+            </h1>
+            <p className="mt-8 max-w-xl text-cream/75 text-lg">
+              Igna Blendzz is a young DMV barber building a name on clean fades, surgical lineups, and chairs that feel like home.
+            </p>
+            <div className="mt-10 flex gap-4 items-center flex-wrap">
+              <a href={BOOK_URL} target="_blank" rel="noopener noreferrer"
+                 className="bg-gold text-ink px-8 py-4 text-sm uppercase tracking-[0.2em] hover:bg-cream transition">
+                Book a Cut
+              </a>
+              <div className="flex items-center gap-2 text-cream/70 text-sm">
+                <div className="flex gap-0.5">
+                  {Array.from({length:5}).map((_,i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
+                </div>
+                <span>5.0 · 60+ cuts</span>
               </div>
-              <span>5.0 · 60+ cuts</span>
+            </div>
+          </div>
+          <div className="hidden md:flex justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
+              <img src={logo} alt="Igna Blendzz logo" className="relative w-80 h-80 object-contain drop-shadow-2xl" />
             </div>
           </div>
         </div>
